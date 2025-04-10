@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class AbsensiAppConfig(AppConfig):
+class AbsensiConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'absensi_app'
+    name = 'apps.absensi'

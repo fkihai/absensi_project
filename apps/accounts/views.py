@@ -1,7 +1,7 @@
+from django.shortcuts import render
 from rest_framework import viewsets
-from ..models import Employee
-from ..serializers import EmployeeSerializer
-
+from apps.accounts.models import Employee
+from apps.accounts.serializers import EmployeeSerializer
 
 class EmployeeViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
