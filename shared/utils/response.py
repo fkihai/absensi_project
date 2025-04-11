@@ -1,4 +1,5 @@
-from rest_framework.views import Response,status
+from rest_framework.response import Response
+from rest_framework import status
 
 class ResponseHelper:
     
@@ -12,10 +13,10 @@ class ResponseHelper:
         }, status=status_code)
         
     @staticmethod
-    def failed(message = "error", status_code = status.HTTP_400_BAD_REQUEST):
+    def failed(data = None, message = "failed", status_code = status.HTTP_400_BAD_REQUEST):
         return Response({
-            'status' :'error',
+            'status' :'failed',
             'message' : message,
-            'data' : None
+            'data' : data
         },status=status_code)
         

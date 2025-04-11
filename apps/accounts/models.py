@@ -24,7 +24,7 @@ class CustomUser(AbstractUser):
 
 class Employee(models.Model):
     
-    id  = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    # id  = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name="employee_profile", null=False, blank=False)
     nip = models.CharField(max_length=20, unique=True)
     departement = models.CharField(max_length=50, blank=True)
@@ -32,5 +32,5 @@ class Employee(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return f"{self.user.username}"
+        return f"{self.nip} => {self.user.username}"
 
